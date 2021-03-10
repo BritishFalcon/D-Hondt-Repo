@@ -1,0 +1,30 @@
+public class Party
+{
+
+    protected int startVotes;
+    protected List<string> candidates = new List<string>();
+    protected int seats;
+    public int newVotes;
+    protected string currentCandidate;
+    protected string partyName;
+    
+    public Party(string partyName, int votes, List<string> candidateList)
+    {
+        this.partyName = partyName;
+        this.startVotes = votes;
+        this.candidates = candidateList;
+        this.seats = 0;
+        this.newVotes = startVotes;
+    }
+
+    public string wonSeat()
+    {
+        this.seats += 1;
+        this.newVotes = this.startVotes / (this.seats + 1);
+
+        currentCandidate = candidates[0];
+        this.candidates.RemoveAt(0);
+
+        return currentCandidate;
+    }  
+}
