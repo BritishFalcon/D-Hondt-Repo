@@ -1,0 +1,8 @@
+int count = 0;
+do
+{
+    PartyList = PartyList.OrderByDescending(Party => Party.newVotes).ToList();
+    Console.WriteLine(PartyList[0].wonSeat());
+    Console.WriteLine("");
+    count += 1;
+} while (count < 5);
